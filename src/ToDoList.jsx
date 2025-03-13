@@ -21,6 +21,12 @@ function ToDoList() {
     setTasks(filterTasks);
   }
 
+  function handleEnter(event) {
+    if (event.key === "Enter") {
+      addTask();
+    }
+  }
+
   return (
     <div className="container">
       <h1>✔️To-Do-List</h1>
@@ -30,6 +36,7 @@ function ToDoList() {
           value={newTask}
           placeholder="Enter a new task"
           onChange={handleInputChange}
+          onKeyDown={handleEnter}
         />
         <button className="add-btn" onClick={addTask}>
           Add
